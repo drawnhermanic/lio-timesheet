@@ -20,8 +20,9 @@ __Requirements__
 * Database project `Timesheet.Database`
 ## Build and run
 
-First, publish the database project. This will create a database in your local SQL Server instance  ((LocalDb)\MSSQLLocalDB). Use the DEV publish profile.
-Build the project (this will restore the packages)  
+First, build the project (this will restore the packages).  
+Publish the database project. This will create a database in your local SQL Server instance  ((LocalDb)\MSSQLLocalDB). Use the DEV publish profile.
+
 Run the solution
 
 ## Error handling
