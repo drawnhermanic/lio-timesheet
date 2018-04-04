@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Users]
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[UserName] VARCHAR(255),
+	[Password] VARCHAR(255),
+	[CreatedDateTime] DATETIME DEFAULT GETDATE()
+)
