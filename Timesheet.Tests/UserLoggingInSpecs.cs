@@ -27,7 +27,7 @@ namespace Timesheet.Acceptance.Tests
             [Test]
             public void TheItRedirectsToTimesheetPage()
             {
-                SUT.Route.ShouldMapTo<TimesheetController>(c => c.Index());
+                SUT.Route.ShouldMapTo<TimesheetController>(c => c.Index(1));
             }
             
         }

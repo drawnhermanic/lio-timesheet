@@ -14,11 +14,18 @@ namespace Timesheet.Data
 
     public class UserRepository : IUserRepository
     {
+        private readonly IConnectionFactory _connectionFactory;
+
+        public UserRepository(IConnectionFactory connectionFactory)
+        {
+            _connectionFactory = connectionFactory;
+        }
+
         public int Save(string userName, string password)
         {
-            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["TimesheetConnection"].ConnectionString))
+            using (IDbConnection db = _connectionFactory.CreateConnection())
             {
-                const string insertQuery = @"INSERT INTO [dbo].[User]([UserName], [Password], [CreatedDateTime]) VALUES (@UserName, @Password); SELECT SCOPE_IDENTITY()";
+                const string insertQuery = @"INSERT INTO [dbo].[Users]([UserName], [Password]) VALUES (@UserName, @Password); SELECT SCOPE_IDENTITY()";
                 return db.Execute(insertQuery, new { userName, password });
             }
         }

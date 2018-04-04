@@ -2,18 +2,25 @@
 
 __Requirements__
 
-* Login form with username and password
-* Form to enter timesheet
-* View report
+1. Login form with username and password
+2. Form to enter timesheet - *data not persisted*
+3. View report - *not completed*
 
 ## Pre requisites
 
 * SQL Server 2016
 * .NET Framework 4.7.1
 
+## Components
+
+* MVC application `Timesheet`
+* Dapper repository `UserRepository` in `Timesheet.Data`
+* StructureMap Ioc
+* SpecsFor and SpecsFor.Mvc for unit and integration tests
+* Database project `Timesheet.Database`
 ## Build and run
 
-First, publish the database project. This will create a database in your local SQL Server instance  ((LocalDb)\MSSQLLocalDB)
+First, publish the database project. This will create a database in your local SQL Server instance  ((LocalDb)\MSSQLLocalDB). Use the DEV publish profile.
 Build the project (this will restore the packages)  
 Run the solution
 
