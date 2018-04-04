@@ -1,0 +1,24 @@
+﻿@model Timesheet.Models.UserModel
+@{
+    ViewBag.Title = "Log In";
+}
+
+<h2>Log In</h2>
+
+@using (Html.BeginForm())
+{
+<div class="form-group">
+    @Html.LabelFor(model => model.UserName)
+    @Html.EditorFor(model => model.UserName)
+    @Html.ValidationMessageFor(model => model.UserName)
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Password)
+    @Html.EditorFor(model => model.Password)
+    @Html.ValidationMessageFor(model => model.Password)
+</div>
+
+    <div>
+        <input type="submit" value="Login" class="btn btn-primary"/>
+    </div>
+}

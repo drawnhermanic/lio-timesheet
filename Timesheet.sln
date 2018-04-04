@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timesheet", "Timesheet\Timesheet.csproj", "{6B094BA5-3A56-4C99-A181-07BEFD0DD169}"
-EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Timesheet.Database", "..\Timesheet.Database\Timesheet.Database.sqlproj", "{DA41C7F6-5664-483C-91B6-FA48C1B29852}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{F47CB9C3-5F78-4F94-8425-2904109F944C}"
@@ -14,7 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{F4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B3A12899-F293-46FB-B599-A46D8F454576}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timesheet.Tests", "Timesheet.Tests\Timesheet.Tests.csproj", "{179A27C1-A133-4422-AAAA-D1362A0B14FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timesheet.Acceptance.Tests", "Timesheet.Tests\Timesheet.Acceptance.Tests.csproj", "{179A27C1-A133-4422-AAAA-D1362A0B14FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timesheet", "Timesheet\Timesheet.csproj", "{5C02CBA7-C7B4-4000-A8DF-FA8F9EAEFFE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timesheet.Data", "Timesheet.Data\Timesheet.Data.csproj", "{4AE251D3-C995-43FB-8533-B17C716E719F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timesheet.Unit.Tests", "Timesheet.Unit.Tests\Timesheet.Unit.Tests.csproj", "{5428A610-CC12-4215-824B-C7BD02C2AC5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +26,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6B094BA5-3A56-4C99-A181-07BEFD0DD169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B094BA5-3A56-4C99-A181-07BEFD0DD169}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B094BA5-3A56-4C99-A181-07BEFD0DD169}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B094BA5-3A56-4C99-A181-07BEFD0DD169}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DA41C7F6-5664-483C-91B6-FA48C1B29852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DA41C7F6-5664-483C-91B6-FA48C1B29852}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA41C7F6-5664-483C-91B6-FA48C1B29852}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -36,12 +36,25 @@ Global
 		{179A27C1-A133-4422-AAAA-D1362A0B14FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{179A27C1-A133-4422-AAAA-D1362A0B14FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{179A27C1-A133-4422-AAAA-D1362A0B14FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C02CBA7-C7B4-4000-A8DF-FA8F9EAEFFE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C02CBA7-C7B4-4000-A8DF-FA8F9EAEFFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C02CBA7-C7B4-4000-A8DF-FA8F9EAEFFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C02CBA7-C7B4-4000-A8DF-FA8F9EAEFFE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE251D3-C995-43FB-8533-B17C716E719F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE251D3-C995-43FB-8533-B17C716E719F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE251D3-C995-43FB-8533-B17C716E719F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE251D3-C995-43FB-8533-B17C716E719F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5428A610-CC12-4215-824B-C7BD02C2AC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5428A610-CC12-4215-824B-C7BD02C2AC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5428A610-CC12-4215-824B-C7BD02C2AC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5428A610-CC12-4215-824B-C7BD02C2AC5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{179A27C1-A133-4422-AAAA-D1362A0B14FA} = {B3A12899-F293-46FB-B599-A46D8F454576}
+		{5428A610-CC12-4215-824B-C7BD02C2AC5F} = {B3A12899-F293-46FB-B599-A46D8F454576}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7F12D99C-45E6-4659-9400-791DCBDB8697}
