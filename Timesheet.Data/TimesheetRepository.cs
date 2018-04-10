@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using Dapper;
 
@@ -7,9 +8,10 @@ namespace Timesheet.Data
     public interface ITimesheetRepository
     {
         int Save(int userId, int hours, DateTime dateOfTimesheet);
+        IList<Timesheet> Get(int userId);
     }
 
-    public class TimesheetRepository : ITimesheetRepository
+public class TimesheetRepository : ITimesheetRepository
     {
         private readonly IConnectionFactory _connectionFactory;
 
@@ -26,5 +28,21 @@ namespace Timesheet.Data
                 return db.Execute(insertQuery, new { userId, hours, dateOfTimesheet.Date });
             }
         }
+
+        public IList<Timesheet> Get(int userId)
+        {
+            using (IDbConnection db = _connectionFactory.CreateConnection())
+            {
+                const string getTimesheetQuery = @"SELECT * FROM [dbo].[Timesheets] WHERE UserId = @UserId";
+                return db.Query<Timesheet>(getTimesheetQuery, new { userId }).AsList();
+            }
+        }
+    }
+
+    public class Timesheet
+    {
+        public int UserId { get; set; }
+        public DateTime Date { get; set; }
+        public int HoursWorked { get; set; }
     }
 }

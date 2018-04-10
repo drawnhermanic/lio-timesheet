@@ -1,7 +1,22 @@
-﻿@model dynamic
+﻿@model IList<Timesheet.Models.TimesheetModel>
 
 @{
-    ViewBag.Title = "Report";    
+    ViewBag.Title = "Report";
 }
 
 <h2>Show Timesheets</h2>
+
+@for (var index = 0; index < Model.Count(); index++)
+{
+<div>
+    <div>
+        @Html.LabelFor(model => model[index].Date)
+        @Html.DisplayTextFor(model => model[index].Date.Date)
+    </div>
+    <div>
+        @Html.LabelFor(model => model[index].Hours)
+        @Html.DisplayTextFor(model => model[index].Hours)
+    </div>
+    <hr/>
+</div>
+}

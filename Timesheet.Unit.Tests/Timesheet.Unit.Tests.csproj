@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HashingTests.cs" />
+    <Compile Include="ReportControllerTests.cs" />
     <Compile Include="TimesheetControllerTests.cs" />
     <Compile Include="AccountControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
