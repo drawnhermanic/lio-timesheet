@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Managers]
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[UserId] INT NOT NULL,
+	[EmailAddress] VARCHAR(255) NOT NULL
+)

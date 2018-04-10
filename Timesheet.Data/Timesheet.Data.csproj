@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionFactory.cs" />
+    <Compile Include="TimesheetRepository.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Timesheets]
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[UserId] INT NOT NULL,
+	[HoursWorked] INT NOT NULL,
+	[Date] DATETIME,
+	[CreatedDateTime] DATETIME DEFAULT GETDATE()
+)

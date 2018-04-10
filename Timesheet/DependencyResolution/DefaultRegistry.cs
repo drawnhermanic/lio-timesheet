@@ -28,11 +28,12 @@ namespace Timesheet.DependencyResolution {
             Scan(
                 scan => {
                     scan.TheCallingAssembly();
+                    scan.AssemblyContainingType<IUserRepository>();
                     scan.WithDefaultConventions();
 					scan.With(new ControllerConvention());
                 });
-            For<IConnectionFactory>().Use<ConnectionFactory>();
-            For<IUserRepository>().Use<UserRepository>();
+            //For<IConnectionFactory>().Use<ConnectionFactory>();
+            //For<IUserRepository>().Use<UserRepository>();
         }
 
         #endregion

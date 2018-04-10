@@ -3,5 +3,6 @@
 	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	[UserName] VARCHAR(255),
 	[Password] VARCHAR(255),
+	[ManagerId] INT NULL,
 	[CreatedDateTime] DATETIME DEFAULT GETDATE()
 )
